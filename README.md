@@ -213,6 +213,169 @@ The above compiles to:
 }
 ```
 
+### Example
+
+The actual problem I wanted to solve and created this function for was generating grid classes. I used percentage-based width values in the grid classes and in order to avoid calculation issues in modern browsers, CSS `calc()` functions were used. But for backwards compatibility, plain old percentage values were also kept in the stylesheet.
+
+In a widely-used 12 column setup, using percentage width values, a column spanning 4 of the 12 available columns would have a width of ⅓, which equals to roughly 33.3%. In order to make that calculation easier for the browser, `calc(100% / 12 * 4)` is a better value for the `width` property.
+
+In order to generate these classes, I used a simple `@for` directive:
+
+```scss
+@for $i from 1 through 12 {
+    .grid-#{$i} {
+        width: 100% / 12 * $i;
+        width: calc(100% / 12 * #{$i});
+    }
+}
+```
+
+And this compiles to:
+
+```css
+.grid-1 {
+    width: 8.33333%;
+    width: calc(100% / 12 * 1);
+}
+
+.grid-2 {
+    width: 16.66667%;
+    width: calc(100% / 12 * 2);
+}
+
+.grid-3 {
+    width: 25%;
+    width: calc(100% / 12 * 3);
+}
+
+.grid-4 {
+    width: 33.33333%;
+    width: calc(100% / 12 * 4);
+}
+
+.grid-5 {
+    width: 41.66667%;
+    width: calc(100% / 12 * 5);
+}
+
+.grid-6 {
+    width: 50%;
+    width: calc(100% / 12 * 6);
+}
+
+.grid-7 {
+    width: 58.33333%;
+    width: calc(100% / 12 * 7);
+}
+
+.grid-8 {
+    width: 66.66667%;
+    width: calc(100% / 12 * 8);
+}
+
+.grid-9 {
+    width: 75%;
+    width: calc(100% / 12 * 9);
+}
+
+.grid-10 {
+    width: 83.33333%;
+    width: calc(100% / 12 * 10);
+}
+
+.grid-11 {
+    width: 91.66667%;
+    width: calc(100% / 12 * 11);
+}
+
+.grid-12 {
+    width: 100%;
+    width: calc(100% / 12 * 12);
+}
+```
+
+The problem here was, that some of those CSS `calc()` functions are completely unnecessary. The numbers that are integers are unnecessary to be translated into `calc()` functions. This is one example where a Sass function that checks for integers could be useful.
+
+Using `is-int()`, the above example Sass code's output can be simplified and optimized as follows:
+
+```scss
+//Import the partial source file.
+@import 'sass-is-int';
+
+@for $i from 1 through 12 {
+    .grid-#{$i} {
+        width: 100% / 12 * $i;
+        @if is-int(100% / 12 * $i) == false {
+            width: calc(100% / 12 * #{$i});
+        }
+    }
+}
+```
+
+And this compiles to:
+
+```css
+.grid-1 {
+    width: 8.33333%;
+    width: calc(100% / 12 * 1);
+}
+
+.grid-2 {
+    width: 16.66667%;
+    width: calc(100% / 12 * 2);
+}
+
+.grid-3 {
+    width: 25%;
+}
+
+.grid-4 {
+    width: 33.33333%;
+    width: calc(100% / 12 * 4);
+}
+
+.grid-5 {
+    width: 41.66667%;
+    width: calc(100% / 12 * 5);
+}
+
+.grid-6 {
+    width: 50%;
+}
+
+.grid-7 {
+    width: 58.33333%;
+    width: calc(100% / 12 * 7);
+}
+
+.grid-8 {
+    width: 66.66667%;
+    width: calc(100% / 12 * 8);
+}
+
+.grid-9 {
+    width: 75%;
+}
+
+.grid-10 {
+    width: 83.33333%;
+    width: calc(100% / 12 * 10);
+}
+
+.grid-11 {
+    width: 91.66667%;
+    width: calc(100% / 12 * 11);
+}
+
+.grid-12 {
+    width: 100%;
+}
+```
+
+Notice how the classes `.grid-3`, `.grid-6`, `.grid-9` and `.grid-12` are now correctly missing the secondary and in those cases unnecessary `width` properties with a CSS `calc()` value as opposed to the first output.
+
+That is because the Sass `@if` directive evaluates to `true`, since `25`, `50`, `75` and `100` are all integers.
+
 ## Contributing
 
 Questions and feedback are welcome. If you have anything to add, want to correct something in the README, or just want to start a discussion about this project, feel free to open an issue.
