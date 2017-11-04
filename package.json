@@ -1,6 +1,6 @@
 {
   "name": "sass-is-int",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight Sass function that determines whether a number is integer or not.",
   "main": "_is-int.scss",
   "scripts": {
