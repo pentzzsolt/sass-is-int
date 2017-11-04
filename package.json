@@ -1,0 +1,22 @@
+{
+  "name": "sass-is-int",
+  "version": "1.0.0",
+  "description": "A lightweight Sass function that determines whether a number is integer or not.",
+  "main": "_is-int.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pentzzsolt/sass-is-int.git"
+  },
+  "keywords": [
+    "Sass"
+  ],
+  "author": "Zsolt Pentz <pentzzsolt@gmail.com> (https://pentzzsolt.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pentzzsolt/sass-is-int/issues"
+  },
+  "homepage": "https://github.com/pentzzsolt/sass-is-int#readme"
+}
