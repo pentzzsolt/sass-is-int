@@ -92,7 +92,7 @@ There are three different return values that the function can produce:
 
 * The function returns `true` if the parameter is of `number` type and an integer.
 * The function returns `false` if the parameter is of `number` type but not an integer.
-* The function returns `null` if the paramter is not of `number` type.
+* The function returns `null` if the parameter is not of `number` type.
 
 It is important to note that the function returns `null` only if the type of the parameter is not number – neither an integer nor a fraction –, but because `null` is a falsey value, you should probably check for specific return values.
 
