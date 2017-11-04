@@ -1,0 +1,14 @@
+@function is-int($value) {
+	@if type-of($value) != number {
+		@warn '`#{$value}` is not a valid number!';
+		@return null;
+	}
+	@else {
+		@if round($value) == $value {
+			@return true;
+		}
+		@else {
+			@return false;
+		}
+	}
+}
