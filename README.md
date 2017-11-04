@@ -378,11 +378,11 @@ That is because the Sass `@if` directive evaluates to `true`, since `25`, `50`, 
 
 ## Contributing
 
-Questions and feedback are welcome. If you have anything to add, want to correct something in the README, or just want to start a discussion about this project, feel free to open an issue.
+Questions and feedback are welcome. If you have anything to add, want to correct something in the README, or just want to start a discussion about this project, feel free to [open an issue on GitHub](https://github.com/pentzzsolt/sass-is-int/issues).
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/pentzzsolt/sass-is-int/tags). 
 
 ## Authors
 
@@ -390,8 +390,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
-* [Legends tell](https://stackoverflow.com/questions/10669351/test-if-value-is-an-integer-in-sass) that the wonderful [Chris Eppstein](https://twitter.com/chriseppstein) is the original author of this problem. He's awesome and you should follow him on Twitter.
+* [Legends tell](https://stackoverflow.com/questions/10669351/test-if-value-is-an-integer-in-sass) that the wonderful [Chris Eppstein](https://twitter.com/chriseppstein) is the original author of this solution. He's awesome and you should follow him on Twitter.
