@@ -215,7 +215,7 @@ The above compiles to:
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Questions and feedback are welcome. If you have anything to add, want to correct something in the README, or just want to start a discussion about this project, feel free to open an issue.
 
 ## Versioning
 
@@ -224,8 +224,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Zsolt Pentz** - *Initial work* - [pentzzsolt](https://github.com/pentzzsolt)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
