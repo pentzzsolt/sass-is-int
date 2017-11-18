@@ -394,4 +394,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
+* Big thank you to [PurpleBooth](https://github.com/PurpleBooth) for [this lovely README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)!
 * [Legends tell](https://stackoverflow.com/questions/10669351/test-if-value-is-an-integer-in-sass) that the wonderful [Chris Eppstein](https://twitter.com/chriseppstein) is the original author of this solution. He's awesome and you should follow him on Twitter.
