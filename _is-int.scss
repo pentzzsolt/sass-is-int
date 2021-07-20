@@ -3,7 +3,5 @@
         @warn '`#{$value}` is not a valid number!';
         @return false;
     }
-    @else {
-        @return round($value) == $value;
-    }
+    @return round($value) == $value;
 }
