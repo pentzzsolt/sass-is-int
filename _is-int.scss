@@ -1,7 +1,7 @@
 @function is-int($value) {
     @if type-of($value) != number {
         @warn '`#{$value}` is not a valid number!';
-        @return false;
+        @return null;
     }
     @return round($value) == $value;
 }
